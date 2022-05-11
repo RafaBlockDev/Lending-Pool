@@ -39,3 +39,11 @@ Cuando el uso del protocolo es alto, aumenta las tasas de borrow/deposit para at
 Cada bDAI es convertible en una cantidad creciente de DAI a medida que se acumulan los intereses, el tipo de cambio entre bDAI y DAI se calcula utilizando esta fórmula:
 
 ![bDAI](https://github.com/RafaBlockDev/Lending-Pool/blob/main/client/img/bDAI.png)
+
+## Install
+
+`$ npm install`
+
+### Deploy
+
+`$ npm run deploy`
