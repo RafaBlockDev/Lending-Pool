@@ -1,8 +1,16 @@
 import React from 'react'
+import "npm install @rainbow-me/rainbowkit wagmi ethers";
+
+import {
+  apiProvider,
+  configureChains,
+  getDefaultWallets,
+  RanbowKitProvider,
+} from "rainbow-me/rainbowkit";
+
+import { chain, createClient, WagmiProvider } from "wagmi";
 
 function App() {
-
-  const provider = new ethers.providers.Web3Provider(window.ethereum, "Connected!!!!");
 
   return (
     <div>App</div>
