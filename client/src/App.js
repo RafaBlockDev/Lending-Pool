@@ -1,5 +1,4 @@
 import React from 'react'
-import { ConnectButton } from "@rainbow-me/rainbowkit";
 import '@rainbow-me/rainbowkit/styles.css';
 
 import {
@@ -10,6 +9,8 @@ import {
 } from '@rainbow-me/rainbowkit';
 
 import { chain, createClient, WagmiProvider } from 'wagmi';
+
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 const { chains, provider } = configureChains(
   [chain.mainnet, chain.polygon, chain.optimism, chain.arbitrum],
