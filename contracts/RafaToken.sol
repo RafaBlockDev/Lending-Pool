@@ -20,7 +20,7 @@ contract BondToken is ERC20Burnable, Ownable, Math {
     uint256 public totalBorrowed;
     uint256 public totalReserve;
     uint256 public totalDeposit;
-    uint256 public maxLTV = 4; // 1 = 20%
+    uint8 public maxLTV = 4; // 1 = 20%
     uint256 public ethTreasury;
     uint256 public totalCollateral;
     uint256 public baseRate = 20000000000000000;
