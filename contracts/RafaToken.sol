@@ -9,40 +9,10 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
 
 import "./interface/ISwapRouter.sol";
+import "./interface/ILendingPool.sol";
+import "./interface/IUniswapRouter.sol";
+import "./interface/IWETHGateway.sol";
 import "./MathLendingPool.sol";
-
-interface ILendingPool {
-    function deposit(
-        address asset,
-        uint256 amount,
-        address onBehalfOf,
-        uint16 referralCode
-    ) external;
-
-    function withdraw(
-        address asset,
-        uint256 amount,
-        address to
-    ) external returns (uint256);
-}
-
-interface IWETHGateway {
-    function depositETH(
-        address lendingPool,
-        address onBehalfOf,
-        uint16 referralCode
-    ) external payable;
-
-    function withdrawETH(
-        address lendingPool,
-        uint256 amount,
-        address onBehalfOf
-    ) external;
-}
-
-interface IUniswapRouter is ISwapRouter {
-    function refundETH() external payable;
-}
 
 contract BondToken is ERC20Burnable, Ownable, Math {
     using SafeMath for uint256;
