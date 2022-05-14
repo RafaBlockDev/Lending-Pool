@@ -1,15 +1,15 @@
 import React from 'react'
 import { ConnectButton } from "@rainbow-me/rainbowkit";
-import "npm install @rainbow-me/rainbowkit wagmi ethers";
+import '@rainbow-me/rainbowkit/styles.css';
 
 import {
   apiProvider,
   configureChains,
   getDefaultWallets,
-  RanbowKitProvider,
-} from "rainbow-me/rainbowkit";
+  RainbowKitProvider,
+} from '@rainbow-me/rainbowkit';
 
-import { chain, createClient, WagmiProvider } from "wagmi";
+import { chain, createClient, WagmiProvider } from 'wagmi';
 
 const { chains, provider } = configureChains(
   [chain.mainnet, chain.polygon, chain.optimism, chain.arbitrum],
@@ -37,9 +37,9 @@ export const RafaApp = () => {
 function App() {
   return (
     <WagmiProvider client={wagmiClient}>
-      <RanbowKitProvider chains={chains}>
+      <RainbowKitProvider chains={chains}>
         <RafaApp />
-      </RanbowKitProvider>
+      </RainbowKitProvider>
     </WagmiProvider>
   );
 };
