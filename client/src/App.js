@@ -32,7 +32,7 @@ const wagmiClient = createClient({
 })
 
 export const RafaApp = () => {
-  return <ConnectButton />;
+  return <ConnectButton accountStatus="address" chainStatus="icon" showBalance={false}/>;
 }
 
 function App() {
