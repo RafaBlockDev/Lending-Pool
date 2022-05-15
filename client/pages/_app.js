@@ -1,4 +1,4 @@
-import React from 'react'
+import '../styles/globals.css'
 import '@rainbow-me/rainbowkit/styles.css';
 
 import {
@@ -10,8 +10,6 @@ import {
 
 import { chain, createClient, WagmiProvider } from 'wagmi';
 
-import { ConnectButton } from "@rainbow-me/rainbowkit";
-
 const { chains, provider } = configureChains(
   [chain.mainnet, chain.polygon, chain.optimism, chain.arbitrum],
   [
@@ -21,7 +19,7 @@ const { chains, provider } = configureChains(
 );
 
 const { connectors } = getDefaultWallets({
-  appName: "👨🏻‍💻 Rafa´s Web3 App",
+  appName: 'My RainbowKit App',
   chains
 });
 
@@ -31,18 +29,8 @@ const wagmiClient = createClient({
   provider
 })
 
-export const RafaApp = () => {
-  return <ConnectButton accountStatus="address" chainStatus="icon" showBalance={false}/>;
+function MyApp({ Component, pageProps }) {
+  return <Component {...pageProps} />
 }
 
-function App() {
-  return (
-    <WagmiProvider client={wagmiClient}>
-      <RainbowKitProvider chains={chains}>
-        <RafaApp />
-      </RainbowKitProvider>
-    </WagmiProvider>
-  );
-};
-
-export default App
+export default MyApp
